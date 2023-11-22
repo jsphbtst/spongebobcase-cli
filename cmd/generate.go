@@ -26,7 +26,6 @@ func init() {
 
 func generateSpongebobCase(cmd *cobra.Command, args []string) {
 	text, _ := cmd.Flags().GetString("text")
-	fmt.Println("text", text)
 
 	alphaMap := utils.GenerateAlphaMap()
 	newText := ""
