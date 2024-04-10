@@ -13,5 +13,5 @@ func Spongebobify(text string) string {
 		}
 	}
 
-	return text
+	return newText
 }
