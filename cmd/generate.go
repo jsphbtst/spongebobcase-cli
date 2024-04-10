@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"fmt"
+	"os"
 	"strings"
 
 	"github.com/jsphbtst/spongebobcase/pkg/utils"
@@ -14,19 +15,22 @@ var generateCmd = &cobra.Command{
 	Long: `Generate spongebob case text in one command.
 	For example:
 
-	spongebobcase generate -t "this is a sample text"
+	spongebobcase generate "this is a sample text"
 `,
 	Run: generateSpongebobCase,
 }
 
 func init() {
 	rootCmd.AddCommand(generateCmd)
-	generateCmd.Flags().StringP("text", "t", "just pick one", "The text that needs to be spongebobcasified")
 }
 
 func generateSpongebobCase(cmd *cobra.Command, args []string) {
-	text, _ := cmd.Flags().GetString("text")
+	if len(args) != 1 {
+		fmt.Println("Incorrect usage")
+		os.Exit(1)
+	}
 
+	text := args[0]
 	alphaMap := utils.GenerateAlphaMap()
 	newText := ""
 	for i := range text {
