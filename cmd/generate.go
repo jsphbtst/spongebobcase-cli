@@ -3,7 +3,6 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"strings"
 
 	"github.com/jsphbtst/spongebobcase/pkg/utils"
 	"github.com/spf13/cobra"
@@ -31,15 +30,6 @@ func generateSpongebobCase(cmd *cobra.Command, args []string) {
 	}
 
 	text := args[0]
-	alphaMap := utils.GenerateAlphaMap()
-	newText := ""
-	for i := range text {
-		if alphaMap[string(text[i])] {
-			newText += strings.ToUpper(string(text[i]))
-		} else {
-			newText += string(text[i])
-		}
-	}
-
+	newText := utils.Spongebobify(text)
 	fmt.Println(newText)
 }
