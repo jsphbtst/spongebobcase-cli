@@ -32,20 +32,20 @@ func main() {
 
 	jokesJsonFile, err := os.Open("jokes.json")
 	if err != nil {
-		log.Fatalf("Failed to open ∆okes file: %s\n", err.Error())
+		log.Fatalf("Failed to open jokes file: %s\n", err.Error())
 		os.Exit(1)
 	}
 
 	jokesJsonData, err := io.ReadAll(jokesJsonFile)
 	if err != nil {
-		log.Fatalf("Failed to parse configs file: %s\n", err.Error())
+		log.Fatalf("Failed to parse jokes file: %s\n", err.Error())
 		os.Exit(1)
 	}
 
 	var jokesJson JokesJsonFile
 	err = json.Unmarshal(jokesJsonData, &jokesJson)
 	if err != nil {
-		log.Fatalf("Failed to unmarshal configs file: %s\n", err.Error())
+		log.Fatalf("Failed to unmarshal jokes file: %s\n", err.Error())
 		os.Exit(1)
 	}
 
