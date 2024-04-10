@@ -4,9 +4,11 @@ import (
 	"encoding/json"
 	"io"
 	"net/http"
+
+	"github.com/jsphbtst/spongebobcase/pkg/types"
 )
 
-func Get() (*DadJoke, error) {
+func Get() (*types.DadJoke, error) {
 	req, err := http.NewRequest("GET", "https://icanhazdadjoke.com/", nil)
 	if err != nil {
 		return nil, err
@@ -25,7 +27,7 @@ func Get() (*DadJoke, error) {
 		return nil, err
 	}
 
-	var dadJoke DadJoke
+	var dadJoke types.DadJoke
 	err = json.Unmarshal(body, &dadJoke)
 	if err != nil {
 		return nil, err

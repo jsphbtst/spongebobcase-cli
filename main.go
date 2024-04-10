@@ -10,11 +10,8 @@ import (
 	"os"
 
 	"github.com/jsphbtst/spongebobcase/cmd"
+	"github.com/jsphbtst/spongebobcase/pkg/types"
 )
-
-type JokesJsonFile struct {
-	Data []string `json:"data"`
-}
 
 func main() {
 	// Jokes file
@@ -42,7 +39,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	var jokesJson JokesJsonFile
+	var jokesJson types.JokesJsonFile
 	err = json.Unmarshal(jokesJsonData, &jokesJson)
 	if err != nil {
 		log.Fatalf("Failed to unmarshal jokes file: %s\n", err.Error())
