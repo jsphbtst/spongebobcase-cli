@@ -3,7 +3,6 @@ package cmd
 import (
 	"fmt"
 	"os"
-	"strings"
 
 	"github.com/jsphbtst/spongebobcase/pkg/checkers"
 	"github.com/jsphbtst/spongebobcase/pkg/dadjokes"
@@ -48,15 +47,6 @@ func generateFart(cmd *cobra.Command, args []string) {
 	}
 
 	text := dadJokeStruct.Joke
-	alphaMap := utils.GenerateAlphaMap()
-	newText := ""
-	for i := range text {
-		if alphaMap[string(text[i])] {
-			newText += strings.ToUpper(string(text[i]))
-		} else {
-			newText += string(text[i])
-		}
-	}
-
+	newText := utils.Spongebobify(text)
 	fmt.Println(newText)
 }
