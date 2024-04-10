@@ -32,6 +32,6 @@ func generateSpongebobCase(cmd *cobra.Command, args []string) {
 
 	text := args[0]
 	newText := utils.Spongebobify(text)
-	data.SaveJoke(newText)
+	data.Save(newText)
 	fmt.Println(newText)
 }

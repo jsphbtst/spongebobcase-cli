@@ -5,7 +5,3 @@ type DadJoke struct {
 	Joke   string `json:"joke"`
 	Status int32  `json:"status"`
 }
-
-type JokesJsonFile struct {
-	Data []string `json:"data"`
-}

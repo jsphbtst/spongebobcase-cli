@@ -27,7 +27,7 @@ func init() {
 }
 
 /*
- * Would be good to store up to 50 jokes offline in a "jokes.json"
+ * Would be good to store up to 50 jokes offline in a "cache.json"
  * file. Pre-fill these with jokes and remove them when new jokes come
  * in later.
  */
@@ -50,6 +50,6 @@ func generateFart(cmd *cobra.Command, args []string) {
 	text := dadJokeStruct.Joke
 	newText := utils.Spongebobify(text)
 
-	data.SaveJoke(newText)
+	data.Save(newText)
 	fmt.Println(newText)
 }

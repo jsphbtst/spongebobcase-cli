@@ -8,8 +8,8 @@ import (
 	"github.com/jsphbtst/spongebobcase/pkg/types"
 )
 
-func GetJokesJson() (*types.JokesJsonFile, error) {
-	jokesJsonFile, err := os.Open("jokes.json")
+func GetJokesJson() (*types.JsonFile, error) {
+	jokesJsonFile, err := os.Open("cache.json")
 	if err != nil {
 		return nil, err
 	}
@@ -19,7 +19,7 @@ func GetJokesJson() (*types.JokesJsonFile, error) {
 		return nil, err
 	}
 
-	var jokesJson types.JokesJsonFile
+	var jokesJson types.JsonFile
 	err = json.Unmarshal(jokesJsonData, &jokesJson)
 	if err != nil {
 		return nil, err

@@ -12,7 +12,7 @@ import (
 )
 
 func main() {
-	if _, err := os.Stat("jokes.json"); err != nil {
+	if _, err := os.Stat("cache.json"); err != nil {
 		err := data.CreateJokesJson()
 		if err != nil {
 			fmt.Printf("Failed to create jokes file: %s\n", err.Error())

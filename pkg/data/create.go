@@ -3,7 +3,7 @@ package data
 import "os"
 
 func CreateJokesJson() error {
-	file, err := os.Create("jokes.json")
+	file, err := os.Create("cache.json")
 	if err != nil {
 		return err
 	}
