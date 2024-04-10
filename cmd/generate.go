@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/jsphbtst/spongebobcase/pkg/data"
 	"github.com/jsphbtst/spongebobcase/pkg/utils"
 	"github.com/spf13/cobra"
 )
@@ -31,5 +32,6 @@ func generateSpongebobCase(cmd *cobra.Command, args []string) {
 
 	text := args[0]
 	newText := utils.Spongebobify(text)
+	data.SaveJoke(newText)
 	fmt.Println(newText)
 }

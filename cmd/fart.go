@@ -6,6 +6,7 @@ import (
 
 	"github.com/jsphbtst/spongebobcase/pkg/checkers"
 	"github.com/jsphbtst/spongebobcase/pkg/dadjokes"
+	"github.com/jsphbtst/spongebobcase/pkg/data"
 	"github.com/jsphbtst/spongebobcase/pkg/utils"
 	"github.com/spf13/cobra"
 )
@@ -48,5 +49,7 @@ func generateFart(cmd *cobra.Command, args []string) {
 
 	text := dadJokeStruct.Joke
 	newText := utils.Spongebobify(text)
+
+	data.SaveJoke(newText)
 	fmt.Println(newText)
 }
