@@ -4,14 +4,17 @@ import "strings"
 
 func Spongebobify(text string) string {
 	alphaMap := GenerateAlphaMap()
-	newText := ""
-	for i := range text {
-		if alphaMap[string(text[i])] {
-			newText += strings.ToUpper(string(text[i]))
-		} else {
-			newText += string(text[i])
+
+	var newText strings.Builder
+	for _, runeChar := range text {
+		char := string(runeChar)
+		if alphaMap[char] {
+			newText.WriteString(strings.ToUpper(char))
+			continue
 		}
+
+		newText.WriteString(char)
 	}
 
-	return newText
+	return newText.String()
 }
