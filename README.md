@@ -4,5 +4,5 @@
 ```
 spongebobcase fart
 
-spongebobcase generate -t "what's good fam fr fr things be bussin"
+spongebobcase generate "what's good fam fr fr things be bussin"
 ```
