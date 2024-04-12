@@ -5,6 +5,12 @@ type JsonFile struct {
 }
 
 func (j *JsonFile) AddData(text string) {
+	for _, record := range j.Data {
+		if record == text {
+			return
+		}
+	}
+
 	j.Data = append(j.Data, text)
 
 	if len(j.Data) > 50 {

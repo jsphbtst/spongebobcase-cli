@@ -5,7 +5,6 @@ import (
 	"os"
 )
 
-// TODO: do not store the same text in cache.json
 func Save(joke string, fileLoc string) error {
 	currentJokesJson, err := GetJsonData(fileLoc)
 	if err != nil {
