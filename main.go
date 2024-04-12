@@ -1,6 +1,6 @@
 /*
-Copyright © 2023 NAME HERE <EMAIL ADDRESS>
-*/
+ * Copyright © 2023 Joseph Bautista jsphbtst@proton.me
+ */
 package main
 
 import (
@@ -29,7 +29,7 @@ func main() {
 		}
 	}
 
-	jokesJson, err := data.GetJokesJson(fileLoc)
+	jokesJson, err := data.GetJsonData(fileLoc)
 	if err != nil {
 		fmt.Printf("Failed to retrieve jokes json file: %s\n", err.Error())
 		os.Exit(1)
