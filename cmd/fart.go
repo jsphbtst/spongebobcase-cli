@@ -50,6 +50,6 @@ func generateFart(cmd *cobra.Command, args []string) {
 	text := dadJokeStruct.Joke
 	newText := utils.Spongebobify(text)
 
-	data.Save(newText)
+	data.Save(newText, globals.FileLoc)
 	fmt.Println(newText)
 }

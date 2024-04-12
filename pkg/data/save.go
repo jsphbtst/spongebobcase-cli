@@ -6,8 +6,8 @@ import (
 )
 
 // TODO: do not store the same text in cache.json
-func Save(joke string) error {
-	currentJokesJson, err := GetJokesJson()
+func Save(joke string, fileLoc string) error {
+	currentJokesJson, err := GetJokesJson(fileLoc)
 	if err != nil {
 		return err
 	}
@@ -18,7 +18,7 @@ func Save(joke string) error {
 		return err
 	}
 
-	err = os.WriteFile("cache.json", configsBytes, 0644)
+	err = os.WriteFile(fileLoc, configsBytes, 0644)
 	if err != nil {
 		return err
 	}
